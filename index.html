@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brighter Days Ahead Foundation — Fondée par Ariana Grande</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #fdf8f3;
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --gray-light: #f5f3ef;
+    --gray-mid: #e8e4de;
+    --gray-text: #6b6560;
+    --accent-lavender: #8b7fa8;
+    --accent-teal: #4a8b7f;
+    --accent-rose: #c47a8a;
+    --accent-amber: #b8895a;
+    --accent-coral: #c47a6a;
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253, 248, 243, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--gray-mid);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    color: var(--gray-text);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--black); }
+
+  .btn-donate {
+    background: var(--black);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.875rem !important;
+    font-weight: 500;
+    transition: background 0.2s !important;
+    cursor: pointer;
+  }
+
+  .btn-donate:hover { background: #333 !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-rainbow {
+    width: min(600px, 90vw);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent-lavender);
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    color: var(--gray-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    border: 1px solid var(--gray-mid);
+    color: var(--gray-text);
+    background: var(--white);
+    font-weight: 400;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 0.875rem 2.5rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .hero-cta:hover { background: #333; transform: translateY(-1px); }
+
+  /* ABOUT STRIP */
+  .about-strip {
+    background: var(--black);
+    color: var(--white);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .about-strip .label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .about-strip blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+    color: rgba(255,255,255,0.92);
+    font-weight: 400;
+  }
+
+  .about-strip cite {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-style: normal;
+    letter-spacing: 0.05em;
+  }
+
+  /* FUNDS SECTION */
+  .funds-section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 4rem;
+    max-width: 500px;
+  }
+
+  /* FUND CARD */
+  .fund-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 6rem;
+    padding-bottom: 6rem;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .fund-card:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .fund-card.reverse { direction: rtl; }
+  .fund-card.reverse > * { direction: ltr; }
+
+  .fund-img-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+
+  .fund-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .fund-photo-credit {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+  }
+
+  .fund-content {}
+
+  .fund-number {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .fund-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .fund-name.lavender { color: var(--accent-lavender); }
+  .fund-name.teal { color: var(--accent-teal); }
+  .fund-name.rose { color: var(--accent-rose); }
+  .fund-name.amber { color: var(--accent-amber); }
+  .fund-name.coral { color: var(--accent-coral); }
+
+  .fund-desc {
+    color: var(--gray-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .grantees-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .grantee-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .grantee-item:last-child { border-bottom: none; }
+
+  .grantee-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 0.3rem;
+  }
+
+  .grantee-desc {
+    font-size: 0.83rem;
+    color: var(--gray-text);
+    line-height: 1.55;
+  }
+
+  /* HOODIE */
+  .hoodie-section {
+    background: var(--gray-light);
+    border-top: 1px solid var(--gray-mid);
+    border-bottom: 1px solid var(--gray-mid);
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hoodie-section .section-label { margin-bottom: 0.75rem; }
+
+  .hoodie-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    max-width: 480px;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hoodie-desc {
+    color: var(--gray-text);
+    max-width: 440px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hoodie-img {
+    width: min(260px, 70vw);
+    margin-bottom: 2.5rem;
+    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.08));
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    color: rgba(255,255,255,0.5);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  footer .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 0.5rem;
+  }
+
+  footer p { font-size: 0.8rem; line-height: 1.6; }
+
+  footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+  footer a:hover { color: rgba(255,255,255,0.8); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; }
+    .fund-card, .fund-card.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+      gap: 2rem;
+    }
+    .funds-section { padding: 4rem 1.25rem; }
+    .hero { padding: 3rem 1.25rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Brighter Days Ahead Foundation</a>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#fonds">Les fonds</a></li>
+    <li><a href="#soutenir">Soutenir</a></li>
+    <li><a href="https://www.brighterdaysaheadfoundation.org" class="btn-donate" target="_blank">Faire un don</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <img
+    class="hero-rainbow"
+    src="https://cdn.prod.website-files.com/68d2b7f4fb9bd636bd4c7101/68ef05c06752d571716a9d87_Rainbow%20-%207.png"
+    alt="Arc-en-ciel pastel sur fond nuageux"
+  >
+  <p class="hero-eyebrow">Fondée par Ariana Grande</p>
+  <h1 class="hero-title">La fondation qui soutient les <em>communautés vulnérables</em></h1>
+  <p class="hero-desc">
+    La Brighter Days Ahead Foundation finance directement de petites organisations
+    qui apportent protection, aide et ressources vitales à ceux qui en ont le plus besoin.
+  </p>
+  <div class="hero-tags">
+    <span class="tag">Droits trans &amp; LGBTQ+</span>
+    <span class="tag">Santé mentale</span>
+    <span class="tag">Visibilité LGBTQ+</span>
+    <span class="tag">Bien-être animal</span>
+    <span class="tag">Aide d'urgence</span>
+  </div>
+  <a href="#fonds" class="hero-cta">Découvrir les fonds</a>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <p class="label">Un mot d'Ariana Grande</p>
+  <blockquote>
+    « Je suis au-delà de l'excitation de pouvoir enfin annoncer la Brighter Days Ahead Foundation.
+    Notre mission est de soutenir, protéger et fournir des ressources à nos amis vulnérables dans le besoin. »
+  </blockquote>
+  <cite>— Ariana Grande, fondatrice</cite>
+</section>
+
+<!-- FONDS -->
+<section class="funds-section" id="fonds">
+  <p class="section-label">Structure de la fondation</p>
+  <h2 class="section-title">Cinq fonds, une mission commune</h2>
+
+  <!-- FONDS 1 : PROTÉGER & DÉFENDRE -->
+  <div class="fund-card">
+    <div class="fund-img-wrap">
+      <img
+        src="https://cdn.prod.website-files.com/68d2b7f4fb9bd636bd4c7101/68d737404b59a8a9da59ce3c_Tezza-7939.JPG"
+        alt="Manifestants pour les droits trans et Black Lives Matter"
+      >
+      <span class="fund-photo-credit">Photo : Cole Witter</span>
+    </div>
+    <div class="fund-content">
+      <p class="fund-number">Fonds 01</p>
+      <h3 class="fund-name lavender">Protéger &amp; Défendre</h3>
+      <p class="fund-desc">
+        Ce fonds soutient des groupes qui militent pour les droits LGBTQ+, les droits civils
+        et la justice reproductive — pour que chacun se sente en sécurité, soutenu,
+        et ait accès aux ressources dont il a besoin.
+      </p>
+      <p class="grantees-label">Organisations soutenues</p>
+      <div class="grantee-item">
+        <p class="grantee-name">Defending Our Neighbors Fund</p>
+        <p class="grantee-desc">Aide juridique et cautions pour les immigrés menacés de détention ou d'expulsion.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Elevated Access</p>
+        <p class="grantee-desc">Financement des transports pour accéder à l'avortement ou aux soins d'affirmation de genre.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">G.L.I.T.S</p>
+        <p class="grantee-desc">Organisation Black trans-led : logement, soins de santé, réduction des risques.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Lambda Legal</p>
+        <p class="grantee-desc">Défense des droits civils LGBTQ+ et des personnes vivant avec le VIH.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Transgender Law Center</p>
+        <p class="grantee-desc">La plus grande organisation trans-led nationale pour la liberté par le droit.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Trans Youth Emergency Project</p>
+        <p class="grantee-desc">Aide financière aux familles de jeunes trans affectées par les lois restrictives sur les soins.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONDS 2 : GUÉRIR & RÊVER -->
+  <div class="fund-card reverse">
+    <div class="fund-img-wrap">
+      <img
+        src="https://cdn.prod.website-files.com/68d2b7f4fb9bd636bd4c7101/68e87d3b19f6520d4859182a_Tezza-0471%20copy.jpeg"
+        alt="Enfant tenant une pancarte LET ALL KIDS BE THEMSELVES"
+      >
+      <span class="fund-photo-credit">Photo : Alexa Wilkinson</span>
+    </div>
+    <div class="fund-content">
+      <p class="fund-number">Fonds 02</p>
+      <h3 class="fund-name teal">Guérir &amp; Rêver</h3>
+      <p class="fund-desc">
+        Ce fonds élargit l'accès aux soins de santé mentale et au soutien communautaire,
+        pour que chacun se sente compris et capable de guérir.
+      </p>
+      <p class="grantees-label">Organisations soutenues</p>
+      <div class="grantee-item">
+        <p class="grantee-name">Backline</p>
+        <p class="grantee-desc">Ligne de soutien psychologique 24h/24 pour les professionnels de l'industrie musicale.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Jack.org</p>
+        <p class="grantee-desc">Organisation canadienne qui équipe les jeunes pour réduire la stigmatisation en santé mentale.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">National Queer &amp; Trans Therapists of Color Network</p>
+        <p class="grantee-desc">Accès aux soins de santé mentale pour les personnes queer et trans BIPOC.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Trans Lifeline</p>
+        <p class="grantee-desc">Ligne d'écoute gérée par des personnes trans, dédiée aux personnes trans en détresse.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONDS 3 : VU & CÉLÉBRÉ -->
+  <div class="fund-card">
+    <div class="fund-img-wrap">
+      <img
+        src="https://cdn.prod.website-files.com/68d2b7f4fb9bd636bd4c7101/690368a24f613565c7519d02_Tezza-6219.jpeg"
+        alt="Manifestants devant la Cour Suprême des États-Unis"
+      >
+      <span class="fund-photo-credit">Photo : Cole Witter</span>
+    </div>
+    <div class="fund-content">
+      <p class="fund-number">Fonds 03</p>
+      <h3 class="fund-name rose">Vu &amp; Célébré</h3>
+      <p class="fund-desc">
+        Ce fonds veille à ce que les voix et les histoires LGBTQ+
+        soient entendues, représentées et partagées.
+      </p>
+      <p class="grantees-label">Organisations soutenues</p>
+      <div class="grantee-item">
+        <p class="grantee-name">Gender Liberation Movement</p>
+        <p class="grantee-desc">Collectif national pour un monde où chacun vit librement, au-delà des attentes de genre.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Glisten Rainbow Library</p>
+        <p class="grantee-desc">Livres inclusifs et affirmatifs dans les écoles à travers les États-Unis.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">SAGE USA</p>
+        <p class="grantee-desc">Améliore la vie et défend les droits des personnes âgées LGBTQ+.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">TransLash Media</p>
+        <p class="grantee-desc">Média indépendant trans-led centré sur les vies et expériences trans.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Transanta</p>
+        <p class="grantee-desc">Livraison anonyme de cadeaux de Noël aux jeunes trans via leurs lettres.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONDS 4 : EN SÉCURITÉ & AIMÉ -->
+  <div class="fund-card reverse">
+    <div class="fund-img-wrap">
+      <img
+        src="https://cdn.prod.website-files.com/68d2b7f4fb9bd636bd4c7101/68d737ec15e660c75b17b7ea_Tezza-7517.JPG"
+        alt="Petit cochon heureux dans l'herbe"
+      >
+      <span class="fund-photo-credit">Photo : Farm Sanctuary</span>
+    </div>
+    <div class="fund-content">
+      <p class="fund-number">Fonds 04</p>
+      <h3 class="fund-name amber">En Sécurité &amp; Aimé</h3>
+      <p class="fund-desc">
+        Ce fonds veille à ce que les animaux soient traités avec compassion
+        et aient la chance de vivre une vie sûre, pleine et aimée.
+      </p>
+      <p class="grantees-label">Organisations soutenues</p>
+      <div class="grantee-item">
+        <p class="grantee-name">Best Friends Animal Society</p>
+        <p class="grantee-desc">Sauve des animaux sans domicile et aide les communautés à devenir no-kill.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Farm Sanctuary</p>
+        <p class="grantee-desc">Combat les effets de l'agriculture intensive via le sauvetage, l'éducation et le plaidoyer.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Orange Twins Rescue</p>
+        <p class="grantee-desc">Association de Los Angeles spécialisée dans la réhabilitation d'animaux en détresse.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">The Gentle Barn</p>
+        <p class="grantee-desc">Sanctuaire pour animaux rescapés offrant aux enfants des expériences de guérison par le lien animal.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONDS 5 : URGENCE -->
+  <div class="fund-card">
+    <div class="fund-img-wrap">
+      <img
+        src="https://cdn.prod.website-files.com/68d2b7f4fb9bd636bd4c7101/68e87d7bacdd998d22f46c0d_Tezza-9477.JPG.jpeg"
+        alt="Trois enfants en t-shirts Troop 6000"
+      >
+      <span class="fund-photo-credit">Photo : Girl Scouts of Greater New York</span>
+    </div>
+    <div class="fund-content">
+      <p class="fund-number">Fonds 05</p>
+      <h3 class="fund-name coral">Fonds d'Urgence</h3>
+      <p class="fund-desc">
+        Un fonds réactif qui aide les communautés à traverser les crises
+        avec aide et ressources — réponse rapide en cas de besoin collectif.
+      </p>
+      <p class="grantees-label">Organisations récemment soutenues</p>
+      <div class="grantee-item">
+        <p class="grantee-name">Humanity Crew</p>
+        <p class="grantee-desc">Soins d'urgence en santé mentale pour les réfugiés et victimes de crises humanitaires.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Royal Manchester Children's Hospital</p>
+        <p class="grantee-desc">Financement d'une salle de cinéma médicalisée pour les patients hospitalisés — lits, fauteuils roulants et équipements inclus.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Save the Children UK</p>
+        <p class="grantee-desc">Efforts d'urgence à Gaza : soins, nutrition et protection de l'enfance.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Palestine Children's Relief Fund</p>
+        <p class="grantee-desc">Soins médicaux et humanitaires pour les enfants de Palestine.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">This Is About Humanity</p>
+        <p class="grantee-desc">Aide les familles séparées à la frontière États-Unis/Mexique via des services juridiques.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">Troop 6000</p>
+        <p class="grantee-desc">Activités Girl Scouts pour les filles vivant dans les refuges de New York.</p>
+      </div>
+      <div class="grantee-item">
+        <p class="grantee-name">New York Cares</p>
+        <p class="grantee-desc">Plus grand réseau de bénévolat de New York, au service des communautés dans le besoin.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- HOODIE -->
+<section class="hoodie-section" id="soutenir">
+  <p class="section-label">Soutenir la fondation</p>
+  <h2 class="hoodie-title">100% des bénéfices artiste reversés à la fondation</h2>
+  <p class="hoodie-desc">
+    En achetant le hoodie officiel de la Brighter Days Ahead Foundation,
+    vous soutenez directement toutes les organisations et communautés
+    que la fondation accompagne.
+  </p>
+  <img
+    class="hoodie-img"
+    src="https://cdn.prod.website-files.com/68d2b7f4fb9bd636bd4c7101/6a208d4b303f230548824b80_Grey%20Hoodie%206.png"
+    alt="Hoodie officiel gris de la fondation"
+  >
+  <a href="https://www.brighterdaysaheadfoundation.org" class="hero-cta" target="_blank">
+    Visiter le site officiel
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">The Brighter Days Ahead Foundation</p>
+  <p>Fondée par Ariana Grande ♡</p>
+  <p>
+    The Brighter Days Ahead Foundation est un fonds de l'Entertainment Industry Foundation (EIF),<br>
+    organisation à but non lucratif 501(c)(3) — EIN 95-1644609
+  </p>
+  <p>
+    <a href="https://www.brighterdaysaheadfoundation.org" target="_blank">brighterdaysaheadfoundation.org</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/brighterdaysaheadfdn" target="_blank">@brighterdaysaheadfdn</a>
+  </p>
+</footer>
+
+</body>
+</html>
